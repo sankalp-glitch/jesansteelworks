@@ -4352,3 +4352,98 @@ body.products-page .contact-dock-whatsapp {
 @media (prefers-reduced-motion: reduce) {
   .home-page .independence-day-popup { animation: none !important; }
 }
+
+/* === 2026-08-14: Final responsive visual refinements === */
+/* Mobile Home slogan: match the desktop Playfair treatment; all wording in brand blue. */
+@media (max-width: 760px) {
+  .home-page .hero-mobile-option2 h2 {
+    color: #102a43;
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    line-height: .94;
+    letter-spacing: -.043em;
+    text-transform: none;
+  }
+
+  .home-page .hero-mobile-option2 h2 .slogan-main,
+  .home-page .hero-mobile-option2 h2 .slogan-meets {
+    display: inline;
+    margin: 0;
+    color: #102a43;
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -.043em;
+    text-transform: none;
+    vertical-align: baseline;
+  }
+}
+
+/* Mobile Infrastructure hero: compact 4:3 photo card with the complete cutting photograph visible. */
+@media (max-width: 760px) {
+  .infra-page .infra-hero-visual {
+    display: block !important;
+    width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    margin-top: 14px;
+  }
+
+  .infra-page .infra-hero-visual::before,
+  .infra-page .infra-hero-photo-small,
+  .infra-page .infra-orbit {
+    display: none !important;
+  }
+
+  .infra-page .infra-hero-photo-main {
+    position: relative !important;
+    inset: auto !important;
+    display: block !important;
+    width: 92% !important;
+    max-width: 520px !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3 !important;
+    margin: 0 auto !important;
+    overflow: hidden !important;
+    border-radius: 16px !important;
+    transform: none !important;
+    box-shadow: 0 14px 34px rgba(7,27,46,.14) !important;
+  }
+
+  .infra-page .infra-hero-photo-main img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    transform: none !important;
+    background: #171d22;
+  }
+
+  .infra-page .infra-hero-photo-main figcaption {
+    left: 16px;
+    bottom: 13px;
+    font-size: 7px;
+  }
+}
+
+/* Laptop / desktop Independence Day greeting: small card anchored to the hero bottom-left. */
+@media (min-width: 761px) {
+  .home-page .independence-day-popup-desktop {
+    position: absolute;
+    z-index: 7;
+    top: auto !important;
+    right: auto !important;
+    bottom: 22px !important;
+    left: 18px !important;
+    width: clamp(104px, 8vw, 128px) !important;
+    transform-origin: bottom left;
+  }
+
+  .home-page .independence-day-popup-desktop .independence-day-popup-close {
+    width: 24px;
+    height: 24px;
+  }
+}
