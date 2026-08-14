@@ -4447,3 +4447,180 @@ body.products-page .contact-dock-whatsapp {
     height: 24px;
   }
 }
+
+/* === 2026-08-14: Requested final visual corrections === */
+/* Mobile slogan: keep the desktop font treatment; MEETS returns to brand orange. */
+@media (max-width: 760px) {
+  .home-page .hero-mobile-option2 h2 .slogan-main {
+    color: #102a43 !important;
+  }
+
+  .home-page .hero-mobile-option2 h2 .slogan-meets {
+    color: #e96325 !important;
+  }
+}
+
+/* Laptop / desktop Independence Day greeting: compact square at the hero bottom-left. */
+@media (min-width: 761px) {
+  .home-page .independence-day-popup-desktop {
+    position: absolute !important;
+    z-index: 7;
+    top: auto !important;
+    right: auto !important;
+    bottom: 18px !important;
+    left: 18px !important;
+    width: clamp(112px, 9vw, 142px) !important;
+    height: clamp(112px, 9vw, 142px) !important;
+    aspect-ratio: 1 / 1 !important;
+    border-radius: 12px !important;
+    transform-origin: bottom left;
+  }
+
+  .home-page .independence-day-popup-desktop > img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center 43% !important;
+  }
+
+  .home-page .independence-day-popup-desktop .independence-day-popup-close {
+    top: 2px;
+    right: 2px;
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* Infrastructure mobile hero: restore the earlier layered two-photo composition. */
+@media (max-width: 760px) {
+  .infra-page .infra-hero-visual {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    min-height: 350px !important;
+    height: 350px !important;
+    margin-top: 0 !important;
+  }
+
+  .infra-page .infra-hero-visual::before {
+    display: block !important;
+  }
+
+  .infra-page .infra-hero-photo-main {
+    position: absolute !important;
+    inset: 0 0 auto 8% !important;
+    width: auto !important;
+    max-width: none !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    transform: none !important;
+  }
+
+  .infra-page .infra-hero-photo-main img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    transform: none !important;
+    background: var(--ink) !important;
+  }
+
+  .infra-page .infra-hero-photo-small {
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: 38px !important;
+    width: 42% !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+    border: 6px solid var(--cream) !important;
+    transform: none !important;
+  }
+
+  .infra-page .infra-hero-photo-small img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+
+  .infra-page .infra-orbit {
+    display: grid !important;
+    right: -20px !important;
+    top: 24px !important;
+    width: 94px !important;
+    height: 94px !important;
+  }
+}
+
+/* === 2026-08-14: Desktop Independence Day compact fixed celebration button === */
+@media (min-width: 761px) {
+  .home-page .independence-day-popup-desktop {
+    position: fixed !important;
+    z-index: 1200 !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: 18px !important;
+    left: 18px !important;
+    display: flex !important;
+    align-items: stretch !important;
+    width: 198px !important;
+    height: 72px !important;
+    min-width: 0 !important;
+    aspect-ratio: auto !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(227, 91, 29, .34) !important;
+    border-radius: 15px !important;
+    background:
+      linear-gradient(90deg, #ff9933 0 33.333%, #ffffff 33.333% 66.666%, #138808 66.666% 100%) bottom / 100% 3px no-repeat,
+      #fffdf9 !important;
+    box-shadow: 0 9px 26px rgba(7, 27, 46, .20) !important;
+    transform-origin: bottom left !important;
+    transition: transform .22s ease, box-shadow .22s ease !important;
+  }
+
+  .home-page .independence-day-popup-desktop:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 13px 32px rgba(7, 27, 46, .24) !important;
+  }
+
+  .home-page .independence-day-popup-desktop > img {
+    flex: 0 0 62px !important;
+    width: 62px !important;
+    height: 69px !important;
+    object-fit: cover !important;
+    object-position: center 34% !important;
+    border-right: 1px solid rgba(16, 42, 67, .10) !important;
+  }
+
+  .home-page .independence-day-popup-desktop::after {
+    content: "Happy Independence Day\A Jesan Steel Works";
+    white-space: pre-line;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    padding: 7px 27px 8px 10px;
+    color: #102a43;
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 1.38;
+    letter-spacing: .01em;
+  }
+
+  .home-page .independence-day-popup-desktop .independence-day-popup-close {
+    top: 5px !important;
+    right: 5px !important;
+    width: 19px !important;
+    height: 19px !important;
+    border: 1px solid rgba(16, 42, 67, .13) !important;
+    background: rgba(255, 255, 255, .92) !important;
+    box-shadow: 0 2px 7px rgba(7, 27, 46, .10) !important;
+  }
+}
