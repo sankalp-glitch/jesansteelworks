@@ -15,9 +15,19 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 body {
+  width: 100%;
+  max-width: 100%;
   margin: 0;
+  overflow-x: hidden;
   color: #252c32;
   background: var(--paper);
   font-family: Arial, Helvetica, sans-serif;
@@ -4101,7 +4111,7 @@ body.products-page .contact-dock-whatsapp {
   .home-page .hero-mobile-option2 h2 {
     margin: 0;
     color: #102a43;
-    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-family: "DM Serif Display", Georgia, "Times New Roman", serif;
     font-size: clamp(42px, 12.4vw, 60px);
     font-weight: 700;
     line-height: .91;
@@ -4111,22 +4121,23 @@ body.products-page .contact-dock-whatsapp {
 
   .home-page .hero-mobile-option2 h2 .slogan-main {
     color: #102a43;
-    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-family: "DM Serif Display", Georgia, "Times New Roman", serif;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
+    letter-spacing: -.035em;
   }
 
   .home-page .hero-mobile-option2 h2 .slogan-meets {
     display: inline-block;
-    margin-left: .08em;
+    margin-left: .10em;
     color: #e96325;
-    font-family: "Manrope", "Segoe UI", Arial, sans-serif;
-    font-size: .52em;
-    font-style: italic;
-    font-weight: 800;
-    letter-spacing: .015em;
+    font-family: "Dancing Script", "Segoe Script", cursive;
+    font-size: .64em;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0;
     text-transform: lowercase;
-    vertical-align: .16em;
+    vertical-align: .08em;
   }
 
   .home-page .hero-mobile-option2-copy > p {
@@ -4214,71 +4225,114 @@ body.products-page .contact-dock-whatsapp {
   .home-page .hero-mobile-option2-proof span { font-size: 6.2px; }
 }
 
-/* 2026-08-14: Infrastructure hero main photo — preserve full image on mobile only */
+/* 2026-08-14: Mobile stability — prevent horizontal layout shifts / focus zoom while preserving user pinch zoom */
+@media (max-width: 760px) {
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
+  }
+
+  body { touch-action: pan-y pinch-zoom; }
+
+  input,
+  select,
+  textarea { font-size: 16px; }
+}
+
+/* 2026-08-14: Infrastructure first view — one complete, uncropped workshop image on mobile */
 @media (max-width: 760px) {
   .infra-hero-visual {
-    min-height: 350px;
+    display: block;
+    min-height: 0;
+    height: auto;
+  }
+
+  .infra-hero-visual::before,
+  .infra-hero-photo-small,
+  .infra-orbit {
+    display: none !important;
   }
 
   .infra-hero-photo-main {
-    inset: 0 0 auto 8%;
-    width: auto;
+    position: relative;
+    inset: auto;
+    width: 100%;
     height: auto;
     aspect-ratio: 4 / 3;
+    transform: none !important;
+    border-radius: 18px;
+    box-shadow: 0 18px 42px rgba(7,27,46,.16);
   }
 
   .infra-hero-photo-main img {
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     object-position: center;
-    background: var(--ink);
+    background: #171d22;
   }
 }
 
+/* === 2026-08-14: Independence Day floating greeting — mobile + laptop/desktop === */
+.home-page .independence-day-popup {
+  overflow: hidden;
+  border: 1px solid rgba(227, 91, 29, .48);
+  border-radius: 13px;
+  background: #fffdf8;
+  box-shadow: 0 12px 30px rgba(7, 27, 46, .24);
+  transform-origin: top left;
+  animation: independence-day-pop-in .42s cubic-bezier(.2,.8,.25,1) both;
+}
 
-/* === 2026-08-14: Independence Day floating greeting — Home mobile hero only === */
+.home-page .independence-day-popup[hidden] { display: none !important; }
+
+.home-page .independence-day-popup > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.home-page .independence-day-popup-close {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.home-page .independence-day-popup-close:focus-visible {
+  outline: 2px solid #102a43;
+  outline-offset: -3px;
+}
+
+/* Laptop / desktop placement: compact card over the furniture side of the hero. */
+.home-page .independence-day-popup-desktop {
+  position: absolute;
+  z-index: 7;
+  top: 34px;
+  left: 51.5%;
+  width: clamp(138px, 12vw, 172px);
+}
+
 @media (max-width: 760px) {
-  .home-page .independence-day-popup {
+  .home-page .independence-day-popup-desktop { display: none; }
+
+  .home-page .independence-day-popup-mobile {
     position: absolute;
     z-index: 5;
     top: 12px;
     left: 10px;
     width: clamp(116px, 35%, 168px);
     margin: 0;
-    overflow: hidden;
-    border: 1px solid rgba(227, 91, 29, .48);
-    border-radius: 13px;
-    background: #fffdf8;
-    box-shadow: 0 12px 28px rgba(7, 27, 46, .24);
-    transform-origin: top left;
-    animation: independence-day-pop-in .42s cubic-bezier(.2,.8,.25,1) both;
-  }
-
-  .home-page .independence-day-popup[hidden] { display: none !important; }
-
-  .home-page .independence-day-popup > img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  .home-page .independence-day-popup-close {
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    width: 30px;
-    height: 30px;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    border-radius: 50%;
-    background: transparent;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  .home-page .independence-day-popup-close:focus-visible {
-    outline: 2px solid #102a43;
-    outline-offset: -3px;
   }
 }
 
@@ -4288,7 +4342,7 @@ body.products-page .contact-dock-whatsapp {
 }
 
 @media (max-width: 350px) {
-  .home-page .independence-day-popup {
+  .home-page .independence-day-popup-mobile {
     top: 10px;
     left: 8px;
     width: 112px;

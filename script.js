@@ -489,14 +489,13 @@
   }
 
 
-  /* Independence Day mobile hero greeting */
-  const independenceDayPopup = document.getElementById("independenceDayPopup");
-  const independenceDayPopupClose = document.getElementById("independenceDayPopupClose");
-  if (independenceDayPopup && independenceDayPopupClose) {
-    independenceDayPopupClose.addEventListener("click", () => {
-      independenceDayPopup.hidden = true;
+  /* Independence Day greeting — mobile and desktop */
+  document.querySelectorAll(".independence-day-popup").forEach((popup) => {
+    const closeButton = popup.querySelector(".independence-day-popup-close");
+    closeButton?.addEventListener("click", () => {
+      popup.hidden = true;
     });
-  }
+  });
 
 
   /* dock-footer-visibility: keep quick actions throughout the site, hide them while the footer is visible. */
