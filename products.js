@@ -1,0 +1,5 @@
+/*
+  SANKALP Products compatibility file.
+  Core catalogue interactions are embedded in products.html so search and product
+  details also work reliably when the page is opened locally from the website folder.
+*/
