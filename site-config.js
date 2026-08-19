@@ -17,5 +17,5 @@ window.SITE_CONFIG = Object.freeze({
   businessHours: "9 AM to 7 PM",
   email: "jswhsp@gmail.com",
   instagramUrl: "https://www.instagram.com/jesansteelworks?utm_source=qr",
-  facebookUrl: "",
+  facebookUrl: "https://www.facebook.com/share/1GFefMk7Kp/",
 });

@@ -2412,8 +2412,10 @@ html body .sleek-footer .wordmark-footer.brand-image-lockup .brand-sankalp-wordm
   border-color: transparent;
   background: radial-gradient(circle at 30% 105%, #feda75 0 20%, #fa7e1e 38%, #d62976 62%, #962fbf 82%, #4f5bd5 100%);
 }
+.client-ribbon-facebook { color: #fff; border-color: #1877f2; background: #1877f2; }
 .client-ribbon-whatsapp { color: #fff; border-color: #25d366; background: #25d366; }
 .client-ribbon-instagram:hover,
+.client-ribbon-facebook:hover,
 .client-ribbon-whatsapp:hover { border-color: rgba(255,255,255,.72); filter: brightness(1.06); }
 .client-ribbon-social.is-disabled { opacity: .68; cursor: default; }
 
@@ -2576,8 +2578,14 @@ html body .site-header .brand-image-lockup .brand-sankalp-wordmark {
   border-color: #1877f2;
   background: #1877f2;
 }
+.client-footer-socials a[data-whatsapp-link] {
+  color: #fff;
+  border-color: #25d366;
+  background: #25d366;
+}
 .client-footer-socials a[data-instagram-link]:hover,
-.client-footer-socials a[data-facebook-link]:hover { border-color: rgba(255,255,255,.7); filter: brightness(1.08); }
+.client-footer-socials a[data-facebook-link]:hover,
+.client-footer-socials a[data-whatsapp-link]:hover { border-color: rgba(255,255,255,.7); filter: brightness(1.08); }
 .client-footer-contact > a[data-whatsapp-link] .client-footer-icon {
   display: inline-grid;
   place-items: center;
@@ -2591,8 +2599,26 @@ html body .site-header .brand-image-lockup .brand-sankalp-wordmark {
   fill: currentColor;
   stroke: none;
 }
+.client-footer-partners {
+  margin-top: 34px;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  color: rgba(255,255,255,.62);
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: .025em;
+  text-align: center;
+}
+.client-footer-partners strong { color: rgba(255,255,255,.88); font-weight: 800; }
+.client-footer-partner-separator { color: #e96325; }
+
 .client-footer-bottom {
-  margin-top: 42px;
+  margin-top: 16px;
   padding-top: 16px;
   border-top: 1px solid rgba(255,255,255,.1);
   display: flex;
@@ -4748,4 +4774,26 @@ html {
     font-size: 13px !important;
     letter-spacing: .10em;
   }
+}
+
+/* =========================================================
+   2026-08-19 — Product modal header visibility fix
+   Hide the fixed ribbon/header while a product detail window is open,
+   then restore them automatically when the modal closes.
+   ========================================================= */
+body.products-page.dialog-open .client-ribbon,
+body.products-page.dialog-open .site-header {
+  display: none !important;
+}
+
+
+@media (max-width: 640px) {
+  .client-footer-partners {
+    margin-top: 28px;
+    padding: 11px 8px;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 9.5px;
+  }
+  .client-footer-partner-separator { display: none; }
 }
