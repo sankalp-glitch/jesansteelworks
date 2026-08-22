@@ -4304,9 +4304,9 @@ body.products-page .contact-dock-whatsapp {
 /* === 2026-08-14: Independence Day floating greeting — mobile + laptop/desktop === */
 .home-page .independence-day-popup {
   overflow: hidden;
-  border: 1px solid rgba(227, 91, 29, .48);
+  border: 1px solid rgba(169, 69, 36, .42);
   border-radius: 13px;
-  background: #fffdf8;
+  background: #fff9ec;
   box-shadow: 0 12px 30px rgba(7, 27, 46, .24);
   transform-origin: top left;
   animation: independence-day-pop-in .42s cubic-bezier(.2,.8,.25,1) both;
@@ -4601,11 +4601,11 @@ body.products-page .contact-dock-whatsapp {
     min-width: 0 !important;
     aspect-ratio: auto !important;
     overflow: hidden !important;
-    border: 1px solid rgba(227, 91, 29, .34) !important;
+    border: 1px solid rgba(169, 69, 36, .30) !important;
     border-radius: 15px !important;
     background:
-      linear-gradient(90deg, #ff9933 0 33.333%, #ffffff 33.333% 66.666%, #138808 66.666% 100%) bottom / 100% 3px no-repeat,
-      #fffdf9 !important;
+      linear-gradient(90deg, #a94524 0 50%, #d5a12a 50% 100%) bottom / 100% 3px no-repeat,
+      #fff9ec !important;
     box-shadow: 0 9px 26px rgba(7, 27, 46, .20) !important;
     transform-origin: bottom left !important;
     transition: transform .22s ease, box-shadow .22s ease !important;
@@ -4626,7 +4626,7 @@ body.products-page .contact-dock-whatsapp {
   }
 
   .home-page .independence-day-popup-desktop::after {
-    content: "Happy Independence Day\A Jesan Steel Works";
+    content: "Happy Raksha Bandhan\A Jesan Steel Works";
     white-space: pre-line;
     flex: 1 1 auto;
     display: flex;

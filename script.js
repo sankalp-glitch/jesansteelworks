@@ -489,7 +489,7 @@
   }
 
 
-  /* Independence Day greeting — mobile and desktop */
+  /* Raksha Bandhan greeting — mobile and desktop */
   document.querySelectorAll(".independence-day-popup").forEach((popup) => {
     const closeButton = popup.querySelector(".independence-day-popup-close");
     closeButton?.addEventListener("click", () => {
